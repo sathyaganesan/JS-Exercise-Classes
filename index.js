@@ -8,14 +8,18 @@
 */
 
 // EXAMPLE SOLUTION CODE:
-class Airplane {
+ //- Write an Airplane class whose constructor initializes `name` from an argument.
+class Airplane { 
   constructor(name) {
     this.name = name;
+// - All airplanes built with Airplane should initialize with an `isFlying` property of false.
     this.isFlying = false;
   }
+// + If a plane takes off, its `isFlying` property gets set to true.
   takeOff() {
     this.isFlying = true;
   }
+//  + If a plane lands, its `isFlying` property gets set to false.
   land() {
     this.isFlying = false;
   }
@@ -40,9 +44,33 @@ class Airplane {
         + It should return a string with `name` and `age`. Example: "Mary, 50"
 */
 
+//- Write a Person class whose constructor initializes `name` and `age` from arguments.
 class Person {
-
-}
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  //- All instances of Person should also initialize with an empty `stomach` array.
+    this.stomach = [];
+  }
+//- Give instances of Person the ability to `.eat("someFood")`:
+  eat(someFood) {
+// + When eating an edible, it should be pushed into the `stomach`.
+//+ The `eat` method should have no effect if there are 10 items in the `stomach`.
+    if (this.stomach.length < 10) {
+      this.stomach.push(someFood);
+    }
+  };
+//- Give instances of Person the ability to `.poop()`:
+  poop() {
+//+ When an instance poops, its `stomach` should empty.
+    this.stomach = [];
+  };
+//Give instances of Person a method `.toString()`:
+  toString() {
+//+ It should return a string with `name` and `age`. Example: "Mary, 50"
+    return `${this.name}, ${this.age}`;
+  };
+};
 
 /*
   TASK 2
@@ -58,8 +86,12 @@ class Person {
         + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
 */
 
+//- Write a Car class whose constructor initializes `model` and `milesPerGallon` from arguments.
 class Car {
-
+  constructor(model, milesPerGallon) {
+    this.model = model;
+    this.milesPerGallon = 
+  }
 }
 
 /*
